@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2012/03"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+    <stream name="textFlatFile" format="fixedlength">
+        <record name="Header" class="com.example.FlatFileGenerator.fileformat.HeaderFile">
+            <field name="recordType" length="1" />
+            <field name="fileType" length="15" />
+        </record>
+
+        <record name="Body" class="com.example.FlatFileGenerator.fileformat.Body">
+            <field name="referenceNo" length="14" />
+            <field name="amount" length="16" />
+        </record>
+
+        <record name="Trailer" class="com.example.FlatFileGenerator.fileformat.Trailer">
+            <field name="recordType" length="1" />
+            <field name="fileType" length="15" />
+        </record>
+    </stream>
+</beanio>
